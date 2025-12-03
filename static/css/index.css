@@ -196,4 +196,10 @@ body {
   border-radius: 5px;
 }
 
-
+.wide-image {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
