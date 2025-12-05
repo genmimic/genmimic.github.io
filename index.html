@@ -42,9 +42,6 @@
 </head>
 <body>
 
-
-
-
 <section class="hero">
   <div class="hero-body">
     <div class="container">
@@ -116,86 +113,83 @@
                   <span>Code (coming soon)</span>
                   </a>
               </span>
-              <!-- Dataset Link. 
+              <!-- Dataset Link. -->
               <span class="link-block">
-                <a href="https://github.com/google/nerfies/releases/tag/0.1"
+                <a href=""
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="far fa-images"></i>
                   </span>
-                  <span>Data</span>
+                  <span>Data (coming soon)</span>
                   </a>
-              -->
+              </span>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</section>
 
-<section class="section">
-  <div class="container">
-    <!-- Attention Heatmaps -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-full-width">
-        <hr>
-          <h2 class="title is-3">GenMimic</h2>
-         <img src="static/images/gemimic_teaser.png" class="center"/>
-        <div class="content has-text-justified">
-          <br>  
-          <p>
-            GenMimic enables zero-shot human control from generated videos. Given a text prompt (top) describing a human motion, a video generative model synthesizes a customized human-action video. The 4D human motion trajectory (mid) is reconstructed from the generated video, and mimicked by a Unitree G1 (bottom) using our robust policy, requiring no task-specific finetuning. The robot successfully reproduces the action sequence (turns, points, folds arms) according to the synthetic video input in a zero-shot manner.
-          </p>
-      </div>
-  </div>
-</section>
-
-
-<section class="section">
-  <div class="container">
-    <!-- Abstract. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified">
-          Video generation models are rapidly improving in their ability to synthesize human actions in novel contexts, holding the potential to serve as high-level planners for contextual robot control. To realize this potential, a key research question remains open: how can a humanoid execute the human actions from generated videos in a zero-shot manner? This challenge arises because generated videos are often noisy and exhibit morphological distortions that make direct imitation difficult compared to real video. To address this, we introduce a two-stage pipeline. First, we lift video pixels into a 4D human representation and then retarget to the humanoid morphology. Second, we propose GenMimic—a physics-aware reinforcement learning policy conditioned on 3D keypoints, and trained with symmetry regularization and keypoint-weighted tracking rewards. As a result, GenMimic can mimic human actions from noisy, generated videos. We curate GenMimicBench, a synthetic human-motion dataset generated using two video generation models across a spectrum of actions and contexts, establishing a benchmark for assessing zero-shot generalization and policy robustness. Extensive experiments demonstrate improvements over strong baselines in simulation and confirm coherent, physically stable motion tracking on a Unitree G1 humanoid robot without fine-tuning. This work offers a promising path to realizing the potential of video generation models as high-level policies for robot control.
-        </div>
-      </div>
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <video id="teaser" autoplay muted loop playsinline height="100%">
+        <source src="./static/videos/teaser.mp4" type="video/mp4">
+      </video>
+      <br><br>
+      <h2 class="subtitle has-text-centered">
+        <span class="ourmethod">GenMimic</span> enables zero-shot humanoid control from generated videos.
+      </h2>
     </div>
   </div>
 </section>
 
 
 <section class="section">
-  <div class="container">
+  <!-- Abstract. -->
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>Video generation models are rapidly improving in their ability to synthesize human actions in novel contexts, holding the potential to serve as high-level planners for contextual robot control. To realize this potential, a key research question remains open: how can a humanoid execute the human actions from generated videos in a zero-shot manner? </p>
+          <p>This challenge arises because generated videos are often noisy and exhibit morphological distortions that make direct imitation difficult compared to real video. To address this, we introduce a two-stage pipeline. First, we lift video pixels into a 4D human representation and then retarget to the humanoid morphology. Second, we propose <span class="ourmethod">GenMimic</span>—a physics-aware reinforcement learning policy conditioned on 3D keypoints, and trained with symmetry regularization and keypoint-weighted tracking rewards. As a result, <span class="ourmethod">GenMimic</span> can mimic human actions from noisy, generated videos. We curate <span class="ourmethod">GenMimicBench</span>, a synthetic human-motion dataset generated using two video generation models across a spectrum of actions and contexts, establishing a benchmark for assessing zero-shot generalization and policy robustness. Extensive experiments demonstrate improvements over strong baselines in simulation and confirm coherent, physically stable motion tracking on a Unitree G1 humanoid robot without fine-tuning. This work offers a promising path to realizing the potential of video generation models as high-level policies for robot control.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--/ Abstract. -->
+
+  <!-- Method Overview. -->
+  <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-full-width">
-          <h2 class="title is-3">GenMimicBench Examples</h2>
-         <img src="static/images/dataset_examples.png" class="center"/>
-        <div class="content has-text-justified">
-          <br>  
-          <p>
-            Examples of GenMimicBench. Our synthetic human-motion dataset is generated using the Wan2.1 and Cosmos-Predict2 video generation models. These videos are produced conditioned on an initial frame and a text prompt describing the action. The dataset spans diverse subjects, environments, and action types including simple gestures and motion compositions.
-          </p>
+        <br><br>
+        <h2 class="title is-3">Method Overview</h2>
+        <img src="static/images/gemimic_policy_pipeline.png" class="center"/>
       </div>
+    </div>
   </div>
+  <!-- Method Overview. -->
+
 </section>
 
 <section class="section">
-  <div class="container">
-    <!-- Attention Heatmaps -->
-    <div class="columns is-centered has-text-centered">
+
+  <!-- GenMimicBench Examples. -->
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
       <div class="column is-full-width">
-          <h2 class="title is-3">GenMimic Policy</h2>
-         <img src="static/images/gemimic_policy_pipeline.png" class="center"/>
-        <div class="content has-text-justified">
-          <br>  
-          <p>
-            GenMimic Policy. Training pipeline: Our GenMimic is trained in IsaacGym on retargeted AMASS trajectories via a student–teacher framework. Training incorporates two key features: (i) weighted keypoint rewards, which prioritize tracking of end effectors over the lower body; and (ii) a symmetry loss, which provides an inductive bias toward symmetric policies. Testing pipeline: a generated video is lifted to a 4D human motion, and retargeted to the humanoid morphology and used as the goal input for GenMimic. Finally, the policy executes the motion in the real world.
-          </p>
+        <h2 class="title is-3"><span class="ourmethod">GenMimicBench</span> Examples</h2>
+        <p>Given an initial frame and text prompt, we can generate videos of humans performing a wide range of actions.</p>
+        <br>
+        <img src="static/images/dataset_examples.png" class="center"/> 
+        <br>
+        <br>
       </div>
+    </div>
   </div>
+  <!--/ GenMimicBench Examples. -->
+
 </section>
 
 <section class="hero is-light is-small">
